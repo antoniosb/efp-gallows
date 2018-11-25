@@ -17,10 +17,7 @@ defmodule GallowsWeb.Router do
     pipe_through(:browser)
 
     get("/", HangmanController, :new_game)
-  end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", GallowsWeb do
-  #   pipe_through :api
-  # end
+    post("/", HangmanController, :create_game)
+  end
 end

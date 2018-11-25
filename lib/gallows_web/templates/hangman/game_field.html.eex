@@ -1,0 +1,21 @@
+<h1>Game Field</h1>
+<div class="row">
+  <p>
+    Game State: <%= @tally.game_state %>
+  </p>
+</div>
+<div class="row">
+  <p>
+    Word so far: <%= join_letters(@tally.letters) %>
+  </p>
+</div>
+<div class="row">
+  <p>
+    Turns Left: <%= @tally.turns_left %>
+  </p> 
+</div>
+<div class="row">
+  <p>
+    Letters Used: <%= join_letters(@tally.used, ", ") %>
+  </p> 
+</div>
