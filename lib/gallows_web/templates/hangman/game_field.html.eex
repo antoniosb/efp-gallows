@@ -19,3 +19,10 @@
     Letters Used: <%= join_letters(@tally.used, ", ") %>
   </p> 
 </div>
+
+<%= form_for(@conn, Routes.hangman_path(@conn, :make_move), [as: :make_move, method: :put], fn f -> %>
+  <div class="form-group row">
+    <%= text_input(f, :guess, class: "form-control") %>
+    <%= submit("Make next move") %>
+  </div>
+<% end) %>
