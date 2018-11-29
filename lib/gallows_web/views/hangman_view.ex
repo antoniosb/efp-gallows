@@ -13,11 +13,7 @@ defmodule GallowsWeb.HangmanView do
     button("New Game", to: Routes.hangman_path(conn, :create_game))
   end
 
-  def turn(left, target) when target >= left do
-    "opacity: 1"
-  end
+  def turn(left, target) when target >= left, do: "dim"
 
-  def turn(left, target) do
-    "opacity: 0.1"
-  end
+  def turn(left, target), do: "faint"
 end

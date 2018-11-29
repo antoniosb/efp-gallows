@@ -1,32 +1,25 @@
-<div class="row">
-  <p>
-    Game State: <%= @tally.game_state %>
-  </p>
-</div>
-<div class="row">
-  <p>
-    Word so far: <%= join_letters(@tally.letters) %>
-  </p>
-</div>
-<div class="row">
-  <p>
-    Turns Left: <%= @tally.turns_left %>
-  </p> 
-</div>
-<div class="row">
-  <p>
-    Letters Used: <%= join_letters(@tally.used, ", ") %>
-  </p> 
-</div>
+<p>
+  Game State: <%= @tally.game_state %>
+</p>
+
+<p>
+  Word so far: <%= join_letters(@tally.letters) %>
+</p>
+
+<p>
+  Turns Left: <%= @tally.turns_left %>
+</p> 
+
+<p>
+  Letters Used: <%= join_letters(@tally.used, ", ") %>
+</p> 
 
 <%= if game_over?(@tally) do %>
   <%= new_game_button(@conn) %>
 <% else %>
   <%= form_for(@conn, Routes.hangman_path(@conn, :make_move), [as: :make_move, method: :put], fn f -> %>
-    <div class="form-group row">
-      <%= text_input(f, :guess, class: "form-control") %>
-      <%= submit("Make next move") %>
-    </div>
+    <%= text_input(f, :guess, class: "form-control") %>
+    <%= submit("Make next move") %>
   <% end) %>
 <% end %>
 

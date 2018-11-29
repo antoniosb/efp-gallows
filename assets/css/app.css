@@ -45,3 +45,7 @@
   background-color: #d1ecf1;
   border-color: #bee5eb;
 }
+
+.faint {
+  opacity: 0.1;
+}
